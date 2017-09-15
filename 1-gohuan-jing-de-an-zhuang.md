@@ -1,9 +1,8 @@
-### 1 Go环境的安装
+# Go环境的安装
 
-Go 语言支持以下系统：
+### Go 语言支持以下系统：
 
-* Linux
-
+* ### Linux
 * FreeBSD
 
 * Mac OS X（也称为 Darwin）
@@ -32,6 +31,14 @@ tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
 
 ```
 export PATH=$PATH:/usr/local/go/bin
+```
+
+
+
+配置go语言的工作路径
+
+```bash
+export GOPATH=/home/liudanbing/goLang
 ```
 
 
