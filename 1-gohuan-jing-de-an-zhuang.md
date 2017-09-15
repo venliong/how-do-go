@@ -7,6 +7,7 @@ Go 语言支持以下系统：
 * FreeBSD
 
 * Mac OS X（也称为 Darwin）
+
 * Window
 
 安装包下载地址为：[https://golang.org/dl/](https://golang.org/dl/)。
@@ -25,9 +26,9 @@ Go 语言支持以下系统：
 tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
 ```
 
-执行以上指令必须加上 `  sudo`
+执行以上指令必须加上 `sudo`
 
-Add`/usr/local/go/bin`to the`PATH`environment variable. You can do this by adding this line to your`/etc/profile`\(for a system-wide installation\) or`$HOME/.profile`:
+添加 `/usr/local/go/bin到 PATH 环境变量中`. 你可以添加到文件`/etc/profile`\(for a system-wide installation\) or`$HOME/.profile`:
 
 ```
 export PATH=$PATH:/usr/local/go/bin
