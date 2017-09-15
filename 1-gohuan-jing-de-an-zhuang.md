@@ -5,6 +5,7 @@ Go 语言支持以下系统：
 * Linux
 
 * FreeBSD
+
 * Mac OS X（也称为 Darwin）
 * Window
 
@@ -12,15 +13,9 @@ Go 语言支持以下系统：
 
 ![](/assets/go1.jpeg)
 
-
-
 ### 安装go语言
 
-
-
 > 如果要升级之前的老版本需要先将之前的版本删除掉。
-
-
 
 ### Linux, Mac OS X, and FreeBSD tarballs
 
@@ -30,7 +25,7 @@ Go 语言支持以下系统：
 tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
 ```
 
-\(Typically these commands must be run as root or through`sudo`.\)
+执行以上指令必须加上 `  sudo`
 
 Add`/usr/local/go/bin`to the`PATH`environment variable. You can do this by adding this line to your`/etc/profile`\(for a system-wide installation\) or`$HOME/.profile`:
 
