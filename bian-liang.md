@@ -18,11 +18,54 @@ import "fmt"
 
 func main() {
         var a int
-        fmt.Printf("a = %d\n", a)
+        fmt.Printf(" = %d\n", a)
 }
 
 $go run test.go
 a = 0
+```
+
+第二种，根据值自行判定变量类型。
+
+```golang
+var v_name = value
+```
+
+第三种，省略var, 注意 :=左侧的变量不应该是已经声明过的，否则会导致编译错误。
+
+```golang
+v_name := value
+
+// 例如
+var a int = 10
+var b = 10
+c : = 10
+```
+
+例如：
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+        //第一种 使用默认值
+        var a int
+        fmt.Printf("a = %d\n", a)
+
+        //第二种
+        var b int = 10
+        fmt.Printf("b = %d\n", b)
+
+        //第三种 省略后面的数据类型,自动匹配类型
+        var c = 20
+        fmt.Printf("c = %d\n", c)
+
+        //第四种 省略var关键字
+        d := 3.14
+        fmt.Printf("d = %f\n", d)
+}
 ```
 
 
