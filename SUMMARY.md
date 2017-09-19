@@ -10,7 +10,7 @@
   * [变量](bian-liang.md)
   * [常量](chang-liang.md)
   * [运算符](yun-suan-fu.md)
-  * 条件语句
+  * [条件语句](tiao-jian-yu-ju.md)
   * 循环语句
   * 函数及变量作用域
 * 高级语法
