@@ -11,12 +11,14 @@
   * [常量](chang-liang.md)
   * [运算符](yun-suan-fu.md)
   * [条件语句](tiao-jian-yu-ju.md)
-  * 循环语句
+  * [循环语句](xun-huan-yu-ju.md)
   * 函数及变量作用域
 * 高级语法
   * [go中的指针](gozhong-de-zhi-zhen.md)
   * go的数组
-  * [Channel ](channel.md)
   * go的结构体
   * 切片
+* [网络通信](wang-luo-tong-xin.md)
+  * [goroutine](goroutine.md)
+  * [Channel ](channel.md)
 
