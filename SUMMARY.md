@@ -22,4 +22,5 @@
   * [Goroutine](goroutine.md)
   * [Channel ](channel.md)
     * [Channel类型](channel/channellei-xing.md)
+    * [Blocking](channel/blocking.md)
 
