@@ -114,17 +114,13 @@ send被执行前\(proceed\)通讯\(communication\)一直被阻塞着。如前所
 
 ---
 
-### receive 操作符
+### receive 语句
 
 `<-ch`用来从channel ch中接收数据，这个表达式会一直被block,直到有数据可以接收。
-
-
 
 * _从一个nil channel中接收数据会一直被block。_
 
 * _从一个被close的channel中接收数据不会被阻塞，而是立即返回，接收完已发送的数据后会返回元素类型的零值\(zero value\)。_
-
-
 
 如前所述，你可以使用一个额外的返回参数来检查channel是否关闭。
 
