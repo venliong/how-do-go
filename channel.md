@@ -109,5 +109,10 @@ send被执行前\(proceed\)通讯\(communication\)一直被阻塞着。如前所
 
 
 
+* _往一个已经被close的channel中继续发送数据会导致**run-time panic**。_
+* _往nil channel中发送数据会一致被阻塞着。_
+
+
+
 
 
