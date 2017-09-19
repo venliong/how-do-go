@@ -41,32 +41,33 @@ func main() {
 
 ake的第二个参数指定缓存的大小：`ch := make(chan int, 100)`。
 
-通过缓存的使用，可以尽量避免阻塞，提供应用的性能。  
-
+通过缓存的使用，可以尽量避免阻塞，提供应用的性能。
 
 ---
 
 ## Range {#Range}
 
-`for …… range`语句可以处理Channel。  
-
+`for …… range`语句可以处理Channel。
 
 ```golang
+package main
+
+import "fmt"
+
+
 func main() {
-	go func() {
-		time.Sleep(1 * time.Hour)
-	}()
-	c := make(chan int)
-	go func() {
-		for i := 0; i < 10; i = i + 1 {
-			c <- i
-		}
-		close(c)
-	}()
-	for i := range c {
-		fmt.Println(i)
-	}
-	fmt.Println("Finished")
+
+        c := make(chan int)
+        go func() {
+                for i := 0; i < 10; i = i + 1 {
+                        c <- i
+                }
+                close(c)
+        }()
+        for i := range c {
+                fmt.Println(i)
+        }
+        fmt.Println("Finished")
 }
 ```
 
