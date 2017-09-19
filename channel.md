@@ -55,17 +55,11 @@ make(chan int, 100)
 
 可以通过内建的`close`方法可以关闭Channel。
 
-
-
 > 你可以在多个goroutine 从/往 一个channel 中 receive/send 数据, 不必考虑额外的同步措施。
-
-
 
 Channel可以作为一个先入先出\(FIFO\)的队列，接收的数据和发送的数据的顺序是一致的。
 
-
-
-channel的 receive支持_multi-valued assignment（多值赋值）_，如	
+channel的 receive支持_multi-valued assignment（多值赋值）_，如
 
 ```golang
 v, ok := <-ch
@@ -73,29 +67,47 @@ v, ok := <-ch
 
 它可以用来检查Channel是否已经被关闭了.
 
-
-
 ### **send语句**
 
 send语句用来往Channel中发送数据， 如`ch <- 3`。
 
-它的定义如下:  
-
+它的定义如下:
 
 ```golang
 SendStmt = Channel "<-" Expression 
-Channel  = Expression 
+Channel  = Expression
 ```
 
 在通讯\(communication\)开始前channel和expression必选先求值出来\(evaluated\)，比如下面的\(3+4\)先计算出7然后再发送给channel。
 
 ```golang
-c := make(chan int)
-defer close(c)  //defer表示当前函数作用域执行完毕会强制自动触发 该语句
-go func() { c <- 3 + 4 }()
-i := <-c
-fmt.Println(i)
+package main
+
+import (
+        "fmt"
+        "time"
+)
+
+func main() {
+        c := make(chan int)
+        defer close(c)
+
+        //开启一个子goroutine
+        go func() {
+                c <- 3 + 4
+                fmt.Println("send 7 to c end.")
+        }()
+
+        time.Sleep(3 * time.Second)
+        i := <-c
+        fmt.Printf("i = %d\n ", i)
+        fmt.Printf("main end. ")
+}
 ```
+
+send被执行前\(proceed\)通讯\(communication\)一直被阻塞着。如前所言，无缓存的channel只有在receiver准备好后send才被执行。如果有缓存，并且缓存未满，则send会被执行。
+
+
 
 
 
