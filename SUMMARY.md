@@ -21,4 +21,5 @@
 * [网络通信](wang-luo-tong-xin.md)
   * [Goroutine](goroutine.md)
   * [Channel ](channel.md)
+    * [Channel类型](channel/channellei-xing.md)
 
