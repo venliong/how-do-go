@@ -89,11 +89,7 @@ func main(){
 
 ## 优雅的常量 iota
 
-
-
 有些概念有名字，并且有时候我们关注这些名字，甚至（特别）是在我们代码中。
-
-
 
 ```golang
 const (
@@ -107,8 +103,6 @@ const (
 
 我们仅仅关注它们是怎么彼此区分的。
 
-
-
 ```golang
 const (
     CategoryBooks    = 0
@@ -121,13 +115,9 @@ const (
 
 在 Go，常量有许多微妙之处。当用好了，可以使得代码非常优雅且易维护的。
 
-
-
 ### 自增长
 
 在 golang 中，一个方便的习惯就是使用`iota`标示符，它简化了常量用于增长数字的定义，给以上相同的值以准确的分类。
-
-
 
 ```golang
 const (
@@ -150,10 +140,7 @@ const (
     TypicalUnixWizard             // 2
     TypicalStartupFounder         // 3
 )
-
 ```
-
-
 
 如果一个函数以`int`作为它的参数而不是`Stereotype`，如果你给它传递一个`Stereotype`，它将在编译器期出现问题。如下
 
@@ -194,14 +181,10 @@ func main() {
 }
 ```
 
-
-
 ```bash
 output:
 $cannot use TypicalHipster (type Stereotype) as type int in argument to CountAllTheThings
 ```
-
-
 
 相反亦是成立的。给一个函数以`Stereotype`作为参数，你不能给它传递`int`。
 
@@ -229,6 +212,41 @@ func main() {
 // output:
 // cannot use i (type int) as type Stereotype in argument to SoSayethThe
 ```
+
+但是戏剧性的是，尽管如此，你可以传递一个数值常量，然后它却能够工作。
+
+```golang
+func main() {
+    fmt.Println(SoSayethThe(0))
+}
+
+// output:
+// I'm a confused ninja rockstar.
+```
+
+这是因为常量在 Go 中是弱类型直到它使用在一个严格的上下文环境中。
+
+
+
+另外，我们可以使用下划线跳过不想要的值。
+
+
+
+```golang
+type AudioOutput int
+
+const (
+    OutMute AudioOutput = iota // 0
+    OutMono                    // 1
+    OutStereo                  // 2
+    _
+    _
+    OutSurround                // 5
+)
+
+```
+
+### iota和表达式
 
 
 
