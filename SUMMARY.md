@@ -23,4 +23,5 @@
   * [Channel ](channel.md)
     * [Channel类型](channel/channellei-xing.md)
     * [Blocking、Range](channel/blocking.md)
+    * [select](channel/select.md)
 
