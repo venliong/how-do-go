@@ -67,6 +67,8 @@ v, ok := <-ch
 
 它可以用来检查Channel是否已经被关闭了.
 
+---
+
 ### **send语句**
 
 send语句用来往Channel中发送数据， 如`ch <- 3`。
@@ -107,12 +109,30 @@ func main() {
 
 send被执行前\(proceed\)通讯\(communication\)一直被阻塞着。如前所言，无缓存的channel只有在receiver准备好后send才被执行。如果有缓存，并且缓存未满，则send会被执行。
 
-
-
 * _往一个已经被close的channel中继续发送数据会导致**run-time panic**。_
 * _往nil channel中发送数据会一致被阻塞着。_
 
+---
+
+### receive 操作符
+
+`<-ch`用来从channel ch中接收数据，这个表达式会一直被block,直到有数据可以接收。
 
 
 
+* _从一个nil channel中接收数据会一直被block。_
+
+* _从一个被close的channel中接收数据不会被阻塞，而是立即返回，接收完已发送的数据后会返回元素类型的零值\(zero value\)。_
+
+
+
+如前所述，你可以使用一个额外的返回参数来检查channel是否关闭。
+
+```golang
+x, ok := <-ch
+x, ok = <-ch
+var x, ok = <-ch
+```
+
+如果OK 是false，表明接收的x是产生的零值，这个channel被关闭了或者为空。
 
