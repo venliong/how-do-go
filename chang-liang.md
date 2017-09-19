@@ -226,11 +226,7 @@ func main() {
 
 这是因为常量在 Go 中是弱类型直到它使用在一个严格的上下文环境中。
 
-
-
 另外，我们可以使用下划线跳过不想要的值。
-
-
 
 ```golang
 type AudioOutput int
@@ -243,10 +239,9 @@ const (
     _
     OutSurround                // 5
 )
-
 ```
 
 ### iota和表达式
 
-
+`iota`可以做更多事情，而不仅仅是 increment。更精确地说，`iota`总是用于 increment，但是它可以用于表达式，在常量中的存储结果值。
 
