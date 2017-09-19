@@ -16,6 +16,7 @@
 * 高级语法
   * [go中的指针](gozhong-de-zhi-zhen.md)
   * go的数组
+  * Channel 
   * go的结构体
   * 切片
 
