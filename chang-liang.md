@@ -245,3 +245,77 @@ const (
 
 `iota`可以做更多事情，而不仅仅是 increment。更精确地说，`iota`总是用于 increment，但是它可以用于表达式，在常量中的存储结果值。
 
+
+
+```golang
+type Allergen int
+
+const (
+    IgEggs Allergen = 1 << iota         // 1 << 0 which is 00000001
+    IgChocolate                         // 1 << 1 which is 00000010
+    IgNuts                              // 1 << 2 which is 00000100
+    IgStrawberries                      // 1 << 3 which is 00001000
+    IgShellfish                         // 1 << 4 which is 00010000
+)
+```
+
+这个工作是因为当你在一个`const`组中仅仅有一个标示符在一行的时候，它将使用增长的`iota`取得前面的表达式并且再运用它，。在 Go 语言的[spec](http://golang.org/ref/spec#Iota)中， 这就是所谓的隐性重复最后一个非空的表达式列表.
+
+如果你对鸡蛋，巧克力和海鲜过敏，把这些 bits 翻转到 “on” 的位置（从左到右映射 bits）。然后你将得到一个 bit 值`00010011`，它对应十进制的 19。
+
+
+
+```golang
+fmt.Println(IgEggs | IgChocolate | IgShellfish)
+
+// output:
+// 19
+```
+
+
+
+```golang
+type ByteSize float64
+
+const (
+    _           = iota                   // ignore first value by assigning to blank identifier
+    KB ByteSize = 1 << (10 * iota)       // 1 << (10*1)
+    MB                                   // 1 << (10*2)
+    GB                                   // 1 << (10*3)
+    TB                                   // 1 << (10*4)
+    PB                                   // 1 << (10*5)
+    EB                                   // 1 << (10*6)
+    ZB                                   // 1 << (10*7)
+    YB                                   // 1 << (10*8)
+)
+```
+
+---
+
+当你在把两个常量定义在一行的时候会发生什么？
+
+Banana 的值是什么？ 2 还是 3？ Durian 的值又是？
+
+```golang
+const (
+    Apple, Banana = iota + 1, iota + 2
+    Cherimoya, Durian
+    Elderberry, Fig
+)
+```
+
+`ota`
+
+在下一行增长，而不是立即取得它的引用。
+
+```golang
+// Apple: 1
+// Banana: 2
+// Cherimoya: 2
+// Durian: 3
+// Elderberry: 3
+// Fig: 4
+```
+
+
+
