@@ -1,0 +1,6 @@
+# Goroutine
+
+goroutine不同于thread，threads是操作系统中的对于一个独立运行实例的描述，不同操作系统，对于thread的实现也不尽相同；但是，操作系统并不知道goroutine的存在，goroutine的调度是有Golang运行时进行管理的。启动thread虽然比process所需的资源要少，但是多个thread之间的上下文切换仍然是需要大量的工作的（寄存器/Program Count/Stack Pointer/...），Golang有自己的调度器，许多goroutine的数据都是共享的，因此goroutine之间的切换会快很多，启动goroutine所耗费的资源也很少，一个Golang程序同时存在几百个goroutine是很正常的。
+
+channel，即“管道”，是用来传递数据（叫消息更为合适）的一个数据结构，即可以从channel里面塞数据，也可以从中获取数据。channel本身并没有什么神奇的地方，但是channel加上了goroutine，就形成了一种既简单又强大的请求处理模型，即N个工作goroutine将处理的中间结果或者最终结果放入一个channel，另外有M个工作goroutine从这个channel拿数据，再进行进一步加工，通过组合这种过程，从而胜任各种复杂的业务模型。
+

@@ -19,6 +19,6 @@
   * go的结构体
   * 切片
 * [网络通信](wang-luo-tong-xin.md)
-  * [goroutine](goroutine.md)
+  * [Goroutine](goroutine.md)
   * [Channel ](channel.md)
 
