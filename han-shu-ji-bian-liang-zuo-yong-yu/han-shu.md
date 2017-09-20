@@ -24,8 +24,6 @@ func function_name( [parameter list] ) [return_types] {
 }
 ```
 
-
-
 函数定义解析：
 
 `func`：函数由 func 开始声明
@@ -38,11 +36,7 @@ func function_name( [parameter list] ) [return_types] {
 
 函数体：函数定义的代码集合。
 
-
-
 以下实例为 max\(\) 函数的代码，该函数传入两个整型参数 num1 和 num2，并返回这两个参数的最大值：
-
-
 
 ```golang
 /* 函数返回两个数的最大值 */
@@ -59,15 +53,11 @@ func max(num1, num2 int) int {
 }
 ```
 
-
-
 ### 函数调用
 
 当创建函数时，你定义了函数需要做什么，通过调用改函数来执行指定任务。
 
 调用函数，向函数传递参数，并返回值，例如：
-
-
 
 ```golang
 package main
@@ -131,8 +121,6 @@ func main() {
 
 Kumar Mahesh
 
-
-
 ---
 
 ### 函数参数
@@ -143,9 +131,7 @@ Kumar Mahesh
 
 调用函数，可以通过两种方式来传递参数：
 
-
-
-> 值传递：
+> ### 值传递：
 
 值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
 
@@ -209,4 +195,69 @@ func swap(x, y int) int {
 交换后 a 的值 : 100
 
 交换后 b 的值 : 200
+
+
+
+---
+
+> ### 引用传递
+
+引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
+
+引用传递指针参数传递到函数内，以下是交换函数 swap\(\) 使用了引用传递：
+
+
+
+```golang
+/* 定义交换值函数*/
+func swap(x *int, y *int) {
+   var temp int
+   temp = *x    /* 保持 x 地址上的值 */
+   *x = *y      /* 将 y 值赋给 x */
+   *y = temp    /* 将 temp 值赋给 y */
+}
+```
+
+以下我们通过使用引用传递来调用 swap\(\) 函数：
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+   /* 定义局部变量 */
+   var a int = 100
+   var b int= 200
+
+   fmt.Printf("交换前，a 的值 : %d\n", a )
+   fmt.Printf("交换前，b 的值 : %d\n", b )
+
+   /* 调用 swap() 函数
+   * &a 指向 a 指针，a 变量的地址
+   * &b 指向 b 指针，b 变量的地址
+   */
+   swap(&a, &b)
+
+   fmt.Printf("交换后，a 的值 : %d\n", a )
+   fmt.Printf("交换后，b 的值 : %d\n", b )
+}
+
+func swap(x *int, y *int) {
+   var temp int
+   temp = *x    /* 保存 x 地址上的值 */
+   *x = *y      /* 将 y 值赋给 x */
+   *y = temp    /* 将 temp 值赋给 y */
+}
+```
+
+以上代码执行结果为：
+
+交换前，a 的值 : 100
+
+交换前，b 的值 : 200
+
+交换后，a 的值 : 200
+
+交换后，b 的值 : 100
 
