@@ -25,4 +25,5 @@
     * [Blocking、Range](channel/blocking.md)
     * [select](channel/select.md)
     * [Timer 和 Ticker](time-he-ticker.md)
+    * [Close](channel/close.md)
 
