@@ -26,5 +26,30 @@ if stop2 {
 }
 ```
 
+---
+
+#### `ticker`
+
+是一个定时触发的计时器，它会以一个间隔\(interval\)往Channel发送一个事件\(当前时间\)，而Channel的接收者可以以固定的时间间隔从Channel中读取事件。下面的例子中ticker每500毫秒触发一次，你可以观察输出的时间。
+
+```golang
+package main
+
+import "fmt"
+import "time"
+
+func main() {
+        ticker := time.NewTicker(time.Millisecond * 500)
+        go func() {
+                for t := range ticker.C {
+                        fmt.Println("Tick at", t)
+                }
+        }()
+
+        timer := time.NewTimer(time.Hour * 1)
+        <-timer.C
+}
+```
+
 
 
