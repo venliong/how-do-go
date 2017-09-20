@@ -1,25 +1,21 @@
 ## Close
 
-
-
 内建的close方法可以用来关闭channel。
 
 总结一下channel关闭后sender的receiver操作。  
 如果channel c已经被关闭,继续往它发送数据会导致`panic: send on closed channel`:
 
-
-
 ```golang
 import "time"
 func main() {
-	go func() {
-		time.Sleep(time.Hour)
-	}()
-	c := make(chan int, 10)
-	c <- 1
-	c <- 2
-	close(c)
-	c <- 3
+    go func() {
+        time.Sleep(time.Hour)
+    }()
+    c := make(chan int, 10)
+    c <- 1
+    c <- 2
+    close(c)
+    c <- 3
 }
 ```
 
@@ -36,7 +32,26 @@ fmt.Println(<-c) //0
 fmt.Println(<-c) //0
 ```
 
-
-
 但是如果通过`range`读取，channel关闭后for循环会跳出：
+
+```golang
+c := make(chan int, 10)
+c <- 1
+c <- 2
+close(c)
+for i := range c {
+	fmt.Println(i)
+}
+```
+
+通过`i, ok := <-c`可以查看Channel的状态，判断值是零值还是正常读取的值。
+
+```golang
+c := make(chan int, 10)
+close(c)
+i, ok := <-c
+fmt.Printf("%d, %t", i, ok) //0, false
+```
+
+
 
