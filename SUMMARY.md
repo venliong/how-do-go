@@ -26,4 +26,5 @@
     * [select](channel/select.md)
     * [Timer 和 Ticker](time-he-ticker.md)
     * [Close](channel/close.md)
+    * [同步](channel/tong-bu.md)
 
