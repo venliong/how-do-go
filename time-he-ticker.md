@@ -53,3 +53,5 @@ func main() {
 
 类似timer, ticker也可以通过`Stop`方法来停止。一旦它停止，接收者不再会从channel中接收数据了。
 
+
+
