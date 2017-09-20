@@ -15,7 +15,7 @@
   * [函数及变量作用域](han-shu-ji-bian-liang-zuo-yong-yu.md)
     * [函数](han-shu-ji-bian-liang-zuo-yong-yu/han-shu.md)
     * [闭包](han-shu-ji-bian-liang-zuo-yong-yu/bi-bao.md)
-    * 方法
+    * [方法](han-shu-ji-bian-liang-zuo-yong-yu/fang-fa.md)
 * 高级语法
   * [go中的指针](gozhong-de-zhi-zhen.md)
   * go的数组
