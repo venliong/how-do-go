@@ -14,7 +14,7 @@
   * [循环语句](xun-huan-yu-ju.md)
   * [函数及变量作用域](han-shu-ji-bian-liang-zuo-yong-yu.md)
     * [函数](han-shu-ji-bian-liang-zuo-yong-yu/han-shu.md)
-    * 闭包
+    * [闭包](han-shu-ji-bian-liang-zuo-yong-yu/bi-bao.md)
     * 方法
 * 高级语法
   * [go中的指针](gozhong-de-zhi-zhen.md)
