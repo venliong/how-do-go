@@ -18,6 +18,7 @@
   * go的数组
   * go的结构体
   * 切片
+  * defer
 * [网络通信](wang-luo-tong-xin.md)
   * [Goroutine](goroutine.md)
   * [Channel ](channel.md)
