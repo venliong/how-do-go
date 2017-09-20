@@ -196,8 +196,6 @@ func swap(x, y int) int {
 
 交换后 b 的值 : 200
 
-
-
 ---
 
 > ### 引用传递
@@ -205,8 +203,6 @@ func swap(x, y int) int {
 引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。
 
 引用传递指针参数传递到函数内，以下是交换函数 swap\(\) 使用了引用传递：
-
-
 
 ```golang
 /* 定义交换值函数*/
@@ -260,4 +256,36 @@ func swap(x *int, y *int) {
 交换后，a 的值 : 200
 
 交换后，b 的值 : 100
+
+---
+
+## 函数作为值
+
+Go 语言可以很灵活的创建函数，并作为值使用。以下实例中我们在定义的函数中初始化一个变量，该函数仅仅是为了使用内置函数 math.sqrt\(\) ，实例为：
+
+
+
+```golang
+package main
+
+import (
+   "fmt"
+   "math"
+)
+
+func main(){
+   /* 声明函数变量 */
+   getSquareRoot := func(x float64) float64 {
+      return math.Sqrt(x)
+   }
+
+   /* 使用函数 */
+   fmt.Println(getSquareRoot(9))
+
+}
+```
+
+以上代码执行结果为：
+
+3
 
