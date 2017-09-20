@@ -16,10 +16,10 @@
     * [函数](han-shu-ji-bian-liang-zuo-yong-yu/han-shu.md)
     * [闭包](han-shu-ji-bian-liang-zuo-yong-yu/bi-bao.md)
     * [方法](han-shu-ji-bian-liang-zuo-yong-yu/fang-fa.md)
-* 高级语法
+* [高级语法](gao-ji-yu-fa.md)
   * [go中的指针](gozhong-de-zhi-zhen.md)
-  * go的数组
-  * go的结构体
+  * [go的数组](gode-shu-zu.md)
+  * [go的结构体](gode-jie-gou-ti.md)
   * 切片
   * defer
 * [网络通信](wang-luo-tong-xin.md)
