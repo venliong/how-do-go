@@ -12,7 +12,8 @@
   * [运算符](yun-suan-fu.md)
   * [条件语句](tiao-jian-yu-ju.md)
   * [循环语句](xun-huan-yu-ju.md)
-  * 函数及变量作用域
+  * [函数及变量作用域](han-shu-ji-bian-liang-zuo-yong-yu.md)
+    * [函数](han-shu-ji-bian-liang-zuo-yong-yu/han-shu.md)
 * 高级语法
   * [go中的指针](gozhong-de-zhi-zhen.md)
   * go的数组
