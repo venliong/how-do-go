@@ -17,13 +17,12 @@
     * [闭包](han-shu-ji-bian-liang-zuo-yong-yu/bi-bao.md)
     * [方法](han-shu-ji-bian-liang-zuo-yong-yu/fang-fa.md)
     * [变量作用域](han-shu-ji-bian-liang-zuo-yong-yu/bian-liang-zuo-yong-yu.md)
+    * [go的数组](gode-shu-zu.md)
+    * [go中的指针](gozhong-de-zhi-zhen.md)
 * [高级语法](gao-ji-yu-fa.md)
-  * [go中的指针](gozhong-de-zhi-zhen.md)
-  * [go的数组](gode-shu-zu.md)
   * [go的结构体](gode-jie-gou-ti.md)
   * 切片
   * defer
-* [网络通信](wang-luo-tong-xin.md)
   * [Goroutine](goroutine.md)
   * [Channel ](channel.md)
     * [Channel类型](channel/channellei-xing.md)
@@ -32,4 +31,5 @@
     * [Timer 和 Ticker](time-he-ticker.md)
     * [Close](channel/close.md)
     * [同步](channel/tong-bu.md)
+* [网络通信](wang-luo-tong-xin.md)
 
