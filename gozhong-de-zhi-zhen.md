@@ -10,8 +10,6 @@ Go 语言的取地址符是 &，放到一个变量前使用就会返回相应变
 
 以下实例演示了变量在内存中地址：
 
-
-
 ```golang
 package main
 
@@ -23,8 +21,6 @@ func main() {
    fmt.Printf("变量的地址: %x\n", &a  )
 }
 ```
-
-
 
 执行以上代码输出结果为：
 
@@ -58,8 +54,6 @@ var fp *float32    /* 指向浮点型 */
 * 访问指针变量中指向地址的值。
 
 在指针类型前面加上 \* 号（前缀）来获取指针所指向的内容。
-
-
 
 ```golang
 package main
@@ -116,8 +110,6 @@ func main() {
 }
 ```
 
-
-
 以上实例输出结果为：
 
 ```golang
@@ -153,7 +145,60 @@ func main() {
       fmt.Printf("a[%d] = %d\n", i, a[i] )
    }
 }
+```
 
+以上代码执行输出结果为：
+
+---
+
+```golang
+a[0] = 10
+a[1] = 100
+a[2] = 200
+```
+
+有一种情况，我们可能需要保存数组，这样我们就需要使用到指针。
+
+以下声明了整型指针数组：
+
+```golang
+var ptr [MAX]*int;
+
+```
+
+ptr 为整型指针数组。因此每个元素都指向了一个值。以下实例的三个整数将存储在指针数组中：
+
+```golang
+package main
+
+import "fmt"
+
+const MAX int = 3
+
+func main() {
+   a := []int{10,100,200}
+   var i int
+   var ptr [MAX]*int;
+
+   for  i = 0; i < MAX; i++ {
+      ptr[i] = &a[i] /* 整数地址赋值给指针数组 */
+   }
+
+   for  i = 0; i < MAX; i++ {
+      fmt.Printf("a[%d] = %d\n", i,*ptr[i] )
+   }
+}
+```
+
+以上代码执行输出结果为：
+
+  
+
+
+```golang
+a[0] = 10
+a[1] = 100
+a[2] = 200
 ```
 
 
