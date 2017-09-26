@@ -22,7 +22,8 @@
 * [高级语法](gao-ji-yu-fa.md)
   * [go的结构体](gode-jie-gou-ti.md)
   * [切片](qie-pian.md)
-  * defer
+  * [Range](range.md)
+  * [defer](defer.md)
   * [Goroutine](goroutine.md)
   * [Channel ](channel.md)
     * [Channel类型](channel/channellei-xing.md)
