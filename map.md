@@ -54,7 +54,6 @@ func main() {
         }
 
 }
-
 ```
 
 以上实例运行结果为：
@@ -78,28 +77,54 @@ package main
 
 import "fmt"
 
-func main() {   
-   /* 创建 map */
-   countryCapitalMap := map[string] string {"France":"Paris","Italy":"Rome","Japan":"Tokyo","India":"New Delhi"}
-   
-   fmt.Println("原始 map")   
-   
-   /* 打印 map */
-   for country := range countryCapitalMap {
-      fmt.Println("Capital of",country,"is",countryCapitalMap[country])
-   }
-   
-   /* 删除元素 */
-   delete(countryCapitalMap,"France");
-   fmt.Println("Entry for France is deleted")  
-   
-   fmt.Println("删除元素后 map")   
-   
-   /* 打印 map */
-   for country := range countryCapitalMap {
-      fmt.Println("Capital of",country,"is",countryCapitalMap[country])
-   }
+func main() {
+        /* 创建map */
+
+        countryCaitalMap := map[string]string{
+                "France": "Paris",
+                "Italy":  "Rome",
+                "Japan":  "Tokyo",
+                "China":  "Beijing"}
+
+        fmt.Println("原始map")
+
+        /* 打印 map */
+        for country := range countryCaitalMap {
+                fmt.Println("Capital of ", country, "is", countryCaitalMap[country])
+        }
+
+        /* 删除元素 */
+
+        delete(countryCaitalMap, "France")
+
+        fmt.Println("Entry for France is deleted")
+
+        fmt.Println("删除元素后 map")
+
+        /* 打印 map */
+
+        for country := range countryCaitalMap {
+                fmt.Println("Capital of ", country, "is", countryCaitalMap[country])
+        }
+
 }
+```
+
+
+
+以上结果为
+
+```golang
+原始map
+Capital of  France is Paris
+Capital of  Italy is Rome
+Capital of  Japan is Tokyo
+Capital of  China is Beijing
+Entry for France is deleted
+删除元素后 map
+Capital of  Italy is Rome
+Capital of  Japan is Tokyo
+Capital of  China is Beijing
 ```
 
 
