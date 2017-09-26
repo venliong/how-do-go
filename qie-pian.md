@@ -136,7 +136,6 @@ func main() {
 func printSlice(x []int){
    fmt.Printf("len=%d cap=%d slice=%v\n",len(x),cap(x),x)
 }
-
 ```
 
 以上实例运行输出结果为:
@@ -190,8 +189,26 @@ func main() {
 func printSlice(x []int){
    fmt.Printf("len=%d cap=%d slice=%v\n",len(x),cap(x),x)
 }
-
 ```
 
+执行以上代码输出结果为：
 
+```golang
+len=9 cap=9 slice=[0 1 2 3 4 5 6 7 8]
+numbers == [0 1 2 3 4 5 6 7 8]
+numbers[1:4] == [1 2 3]
+numbers[:3] == [0 1 2]
+numbers[4:] == [4 5 6 7 8]
+len=0 cap=5 slice=[]
+len=2 cap=9 slice=[0 1]
+len=3 cap=7 slice=[2 3 4]
+```
+
+---
+
+## append\(\) 和 copy\(\) 函数
+
+如果想增加切片的容量，我们必须创建一个新的更大的切片并把原分片的内容都拷贝过来。
+
+下面的代码描述了从拷贝切片的 copy 方法和向切片追加新元素的 append 方法。
 
