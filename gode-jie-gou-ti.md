@@ -110,3 +110,47 @@ struct_pointer.title
 
 接下来让我们使用结构体指针重写以上实例，代码如下：
 
+```golang
+package main
+
+import "fmt"
+
+//定义结构体类型
+type Books struct {
+        title   string
+        author  string
+        subject string
+        book_id int
+}
+
+func printBook(book *Books) {
+        fmt.Printf("Book title : %s\n", book.title)
+        fmt.Printf("Book author: %s\n", book.author)
+        fmt.Printf("Book subject : %s\n", book.subject)
+        fmt.Printf("Book book_id : %d\n", book.book_id)
+}
+
+func main() {
+        var book1 Books //声明book1位Books类型
+        var book2 Books
+
+        /* book1 的描述 */
+        book1.title = "How do Go Lang"
+        book1.author = "liudanbing"
+        book1.subject = "go-itcast"
+        book1.book_id = 100001
+
+        /* book2 的描述 */
+        book2.title = "Lua 上的linux应用"
+        book2.author = "liudanbing"
+        book2.subject = "lua"
+        book2.book_id = 100002
+
+        printBook(&book1)
+
+        printBook(&book2)
+}
+```
+
+
+
