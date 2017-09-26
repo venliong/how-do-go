@@ -21,7 +21,7 @@
     * [go中的指针](gozhong-de-zhi-zhen.md)
 * [高级语法](gao-ji-yu-fa.md)
   * [go的结构体](gode-jie-gou-ti.md)
-  * 切片
+  * [切片](qie-pian.md)
   * defer
   * [Goroutine](goroutine.md)
   * [Channel ](channel.md)
