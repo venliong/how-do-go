@@ -2,8 +2,6 @@
 
 Go 语言提供了另外一种数据类型即接口，它把所有的具有共性的方法定义在一起，任何其他类型只要实现了这些方法就是实现了这个接口。
 
-
-
 ```golang
 /* 定义接口 */
 type interface_name interface {
@@ -30,8 +28,6 @@ func (struct_name_variable struct_name) method_namen() [return_type] {
 ```
 
 ### 实例
-
-
 
 ```golang
 package main
@@ -71,8 +67,6 @@ func main() {
 ```
 
 在上面的例子中，我们定义了一个接口Phone，接口里面有一个方法call\(\)。然后我们在main函数里面定义了一个Phone类型变量，并分别为之赋值为NokiaPhone和IPhone。然后调用call\(\)方法，输出结果如下：
-
-
 
 ```golang
 I am Nokia, I can call you!
