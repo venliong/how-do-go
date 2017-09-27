@@ -24,6 +24,7 @@
   * [切片](qie-pian.md)
   * [Map](map.md)
   * [Range](range.md)
+  * [接口](jie-kou.md)
   * [defer](defer.md)
   * [Goroutine](goroutine.md)
   * [Channel ](channel.md)
